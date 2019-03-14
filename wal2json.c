@@ -312,9 +312,7 @@ pg_decode_startup(LogicalDecodingContext *ctx, OutputPluginOptions *opt, bool is
 		}
 		else if (strcmp(elem->defname, "include-unchanged-toast") == 0)
 		{
-			ereport(ERROR,
-					(errcode(ERRCODE_INVALID_NAME),
-					 errmsg("parameter \"%s\" was deprecated", elem->defname)));
+			continue;
 		}
 		else if (strcmp(elem->defname, "filter-tables") == 0)
 		{
